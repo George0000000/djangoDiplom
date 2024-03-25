@@ -1,0 +1,27 @@
+///////FONTS///////////
+
+
+@import 'variables';
+
+body {
+    font-size: 16px;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 15px;
+}
+
+@import 'header';
+@import 'main';
+@import 'footer';
+@import 'burger';
+@import 'adaptive';
+

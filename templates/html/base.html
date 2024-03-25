@@ -1,0 +1,56 @@
+{% load static %}
+
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Заголовок{% endblock %}</title>
+    <!-- подключение стилей -->
+    {% block styles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    {% endblock %}
+</head>
+<body>
+    <div class="wrapper">
+
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <a href="{% url 'index' %}" class="header-logo">Logo</a>
+
+                    <div class="header-burger">
+                        <span></span>
+                    </div>
+
+                    <nav class="header-nav">
+                        <a class="header-item" href="{% url 'index' %}">Главная</a>
+                        <a class="header-item" href="{% url 'profile' %}">Профиль</a>
+                        <a class="header-item" href="{% url 'appointment' %}">Запись на приём</a>
+                        <a class="header-item" href="{% url 'consultation' %}">Онлайн консультация</a>
+                        <a class="header-item" href="{% url 'auth' %}">Авторизация / Регистрация</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+    <!-- Основное содержимое страницы -->
+        <main class="main">
+            {% block content %}
+                main,ani
+            {% endblock %}
+        </main>
+        <footer class="footer">
+                <div class="container">
+                    footer
+                </div>
+        </footer>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'js/burger.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
